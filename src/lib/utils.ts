@@ -1,6 +1,6 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
-import { ExtendedRecordMap, TableCollectionView } from "notion-types";
+import { ExtendedRecordMap } from "notion-types";
 import { getNotionPages } from "@/apis/notion";
 import { Post } from "@/types/notion";
 

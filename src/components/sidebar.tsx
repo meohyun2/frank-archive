@@ -28,7 +28,7 @@ const Sidebar = ({ navItems }: Props) => {
       </SheetTrigger>
       <SheetContent>
         <SheetHeader>
-          <SheetTitle>Frank's Archive</SheetTitle>
+          <SheetTitle>Frank&apos;s Archive</SheetTitle>
         </SheetHeader>
         <div className="flex flex-col gap-4 pl-5">
           {navItems.map((item) => (

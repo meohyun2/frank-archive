@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Fade } from "react-awesome-reveal";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import { MoveUpRight } from "lucide-react";
@@ -36,7 +35,7 @@ const marqueeItems = [
 
 const Section1 = () => {
   const slides = [
-    <div className="flex items-center h-[40px] gap-1">
+    <div className="flex items-center h-[40px] gap-1" key="hardhat">
       <p>Hardhat</p>
       <Image
         src="/images/hardhat.png"
@@ -46,7 +45,7 @@ const Section1 = () => {
         className="object-contain"
       />
     </div>,
-    <div className="flex items-center h-[40px] gap-1">
+    <div className="flex items-center h-[40px] gap-1" key="react">
       <p>React.js</p>
       <Image
         src="/images/logo-react.svg"
@@ -56,7 +55,7 @@ const Section1 = () => {
         className="object-contain"
       />
     </div>,
-    <div className="flex items-center h-[40px] gap-1">
+    <div className="flex items-center h-[40px] gap-1" key="nextjs">
       <p>Next.js</p>
       <Image
         src="/images/nextjs-icon.svg"
@@ -66,7 +65,7 @@ const Section1 = () => {
         className="object-contain"
       />
     </div>,
-    <div className="flex items-center h-[40px] gap-1">
+    <div className="flex items-center h-[40px] gap-1" key="solidity">
       <p>Solidity</p>
       <Image
         src="/images/solidity.svg"
@@ -76,7 +75,7 @@ const Section1 = () => {
         className="object-contain"
       />
     </div>,
-    <div className="flex items-center h-[40px] gap-1">
+    <div className="flex items-center h-[40px] gap-1" key="the-graph">
       <p>The Graph</p>
       <Image
         src="/images/the-graph.png"

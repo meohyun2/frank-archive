@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 type Props = {
   imageUrl: string;
@@ -15,7 +16,7 @@ export default function ImageCard({ imageUrl, caption, className }: Props) {
       )}
     >
       <div className="w-full h-full p-5 bg-white">
-        <img className="w-full " src={imageUrl} alt="image" />
+        <Image className="w-full " src={imageUrl} alt="image" />
       </div>
       <figcaption className="font-bold text-md border-t-2 p-2">
         {caption}

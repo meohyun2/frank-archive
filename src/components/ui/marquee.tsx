@@ -1,9 +1,8 @@
 interface Props {
   items: React.ReactNode[];
-  className?: string;
 }
 
-export default function Marquee({ items, className }: Props) {
+export default function Marquee({ items }: Props) {
   return (
     <div className="relative flex flex-col overflow-y-hidden gap-10">
       <div className="animate-marquee flex flex-col gap-4">{items}</div>

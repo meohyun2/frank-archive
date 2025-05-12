@@ -24,7 +24,7 @@ export default function VerticalSlides({ items, className }: Props) {
     }, 2000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [visibleItems.length]);
 
   return (
     <div
