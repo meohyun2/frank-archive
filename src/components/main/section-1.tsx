@@ -103,7 +103,7 @@ const Section1 = () => {
             className="cursor-pointer px-8 py-8 max-lg:px-4 max-lg:py-4 text-2xl max-lg:text-xl max-md:text-lg"
             asChild
           >
-            <Link href="/about me" target="_blank">
+            <Link href="/about" target="_blank">
               <p>Find out more about me</p>
               <MoveUpRight size={20} absoluteStrokeWidth />
             </Link>
