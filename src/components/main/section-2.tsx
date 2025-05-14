@@ -23,9 +23,7 @@ const Section2 = async () => {
     <div className="w-full pt-24 pb-12 bg-sky-100 flex flex-col justify-center items-center border-collapse px-6">
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-center">
-          <h1 className="text-3xl max-lg:text-xl font-bold">
-            Recently Archives
-          </h1>
+          <h1 className="text-3xl max-lg:text-xl font-bold">Recent Archives</h1>
           <Button asChild>
             <Link href="/archives" className="flex items-center gap-2" scroll>
               <p>View all</p>

@@ -20,9 +20,7 @@ const Section3 = async () => {
     <div className="w-full pb-24 pt-12 bg-sky-100 flex flex-col justify-center items-center border-collapse px-6">
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-center">
-          <h1 className="text-3xl max-lg:text-xl font-bold">
-            Recently Projects
-          </h1>
+          <h1 className="text-3xl max-lg:text-xl font-bold">Recent Projects</h1>
           <Button asChild>
             <Link href="/projects" className="flex items-center gap-2" scroll>
               <p>View all</p>
