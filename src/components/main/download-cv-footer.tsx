@@ -34,7 +34,7 @@ const DownloadCVFooter = () => {
           Hide
         </Button>
         <Button size="icon" asChild>
-          <Link href="https://t.me/frankfacho" target="_blank">
+          <Link href="https://t.me/shyboifrank" target="_blank">
             <Image src="/telegram.svg" alt="logo" width={20} height={20} />
           </Link>
         </Button>
