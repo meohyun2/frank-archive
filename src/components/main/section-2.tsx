@@ -8,16 +8,12 @@ const Section2 = async () => {
   const database = await getNotionPages(
     process.env.NEXT_PUBLIC_NOTION_ROOT_DATABASE_ID!
   );
-
-  console.log("database", database);
   const notionPosts = await databaseIntoNotionPosts(
     process.env.NEXT_PUBLIC_NOTION_COLLECTION_ID!,
     process.env.NEXT_PUBLIC_NOTION_COLLECTION_VIEW_ID!,
     process.env.NEXT_PUBLIC_NOTION_CATEGORY_ID!,
     database
   );
-
-  console.log("notionPosts", notionPosts);
 
   return (
     <div className="w-full pt-24 pb-12 bg-sky-100 flex flex-col justify-center items-center border-collapse px-6">

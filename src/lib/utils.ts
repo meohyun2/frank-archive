@@ -22,19 +22,15 @@ export async function databaseIntoNotionPosts(
   const blockIds =
     recordMap.collection_query[collectionId][collectionViewId]
       .collection_group_results?.blockIds;
-  console.log("blockIds", blockIds);
   const postRecordMaps: ExtendedRecordMap[] = [];
 
   if (!blockIds) return;
 
   // 2. 페이지 배열 notion API 호출
   for await (const pageId of blockIds) {
-    console.log("pageId", pageId);
     const page = await getNotionPages(pageId);
     postRecordMaps.push(page);
   }
-
-  console.log("postRecordMaps", postRecordMaps);
 
   // 3. 각 페이지 별 데이터 파싱 (Post 인터페이스로 만들기)
   const posts: Post[] = postRecordMaps.map((recordMap) => {
@@ -54,15 +50,18 @@ export async function databaseIntoNotionPosts(
       cover = `https://www.notion.so/image/${encodedUrl}?table=block&id=${pageId}&cache=v2`;
     }
 
-    console.log("page.value.properties", page.value.properties);
     // startedAt, endedAt 추출
     const endedAt =
       page.value.properties?.[
-        process.env.NEXT_PUBLIC_NOTION_PROJECT_START_DATE_ID!
+        process.env.NEXT_PUBLIC_NOTION_PROJECT_END_DATE_ID!
       ]?.[0]?.[1]?.[0]?.[1]?.["start_date"] || "";
     const startedAt =
       page.value.properties?.[
-        process.env.NEXT_PUBLIC_NOTION_PROJECT_END_DATE_ID!
+        process.env.NEXT_PUBLIC_NOTION_PROJECT_START_DATE_ID!
+      ]?.[0]?.[1]?.[0]?.[1]?.["start_date"] || "";
+    const archiveCreatedAt =
+      page.value.properties?.[
+        process.env.NEXT_PUBLIC_NOTION_ARCHIVE_CREATED_DATE_ID!
       ]?.[0]?.[1]?.[0]?.[1]?.["start_date"] || "";
 
     // 제목 추출
@@ -92,6 +91,7 @@ export async function databaseIntoNotionPosts(
       createdAt,
       lastUpdatedAt,
       category,
+      archiveCreatedAt,
       recordMap: recordMap,
       startedAt,
       endedAt,

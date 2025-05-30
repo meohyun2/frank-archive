@@ -10,6 +10,7 @@ export interface Post {
   title: string;
   createdAt: string;
   lastUpdatedAt: string;
+  archiveCreatedAt: string;
   category: Category[];
   recordMap: ExtendedRecordMap;
   cover?: string;

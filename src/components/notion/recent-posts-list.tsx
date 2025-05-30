@@ -57,8 +57,8 @@ const RecentPostsList = ({ posts, link, type }: RecentPostsListProps) => {
             </div>
             {type === "archive" ? (
               <div className="flex items-center text-sm text-gray-500">
-                <time dateTime={post.createdAt}>
-                  {new Date(post.createdAt).toLocaleDateString()}
+                <time dateTime={post.archiveCreatedAt}>
+                  {new Date(post.archiveCreatedAt).toLocaleDateString()}
                 </time>
               </div>
             ) : (
