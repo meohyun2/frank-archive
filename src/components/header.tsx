@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { Button } from "./ui/button";
 import Image from "next/image";
-import { ScrollText } from "lucide-react";
 import Sidebar from "@/components/sidebar";
 
 const navItems = [
