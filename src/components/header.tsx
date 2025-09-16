@@ -55,12 +55,6 @@ const Header = () => {
               <Image src="/github.svg" alt="logo" width={20} height={20} />
             </Link>
           </Button>
-
-          <Button className="cursor-pointer" asChild>
-            <Link href="/Frank.pdf" target="_blank">
-              Coverletter <ScrollText />
-            </Link>
-          </Button>
         </div>
       </div>
     </div>
