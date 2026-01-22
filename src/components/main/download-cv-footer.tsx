@@ -27,7 +27,8 @@ const DownloadCVFooter = () => {
       } sticky bg-white/50 bottom-0 w-full flex gap-[16px] border-3 px-2 py-2 items-center justify-between`}
     >
       <p className="font-extrabold">
-        I&apos;m currently job hunting. Feel free to message me on telegram.
+        I&apos;m passionate about building productivity tools. Feel free to
+        message me on telegram.
       </p>
       <div className="flex justify-end py-4 pr-8 gap-[16px]">
         <Button className="cursor-pointer" onClick={onClickHideCvSection}>

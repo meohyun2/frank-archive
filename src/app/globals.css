@@ -3,47 +3,99 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* ===== LIGHT MODE (Default) ===== */
 :root {
-  --background: oklch(93.46% 0.0305 255.11);
-  --secondary-background: oklch(100% 0 0);
-  --foreground: oklch(0% 0 0);
-  --main-foreground: oklch(0% 0 0);
-  --main: oklch(67.47% 0.1726 259.49);
-  --border: oklch(0% 0 0);
-  --ring: oklch(0% 0 0);
-  --overlay: oklch(0% 0 0 / 0.8);
-  --shadow: 4px 4px 0px 0px var(--border);
+  /* Glassmorphism Color Palette - Light Ethereal Theme */
+  --background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%);
+  --background-solid: #f8fafc;
+  --foreground: #0f172a;
+  --foreground-muted: rgba(15, 23, 42, 0.6);
+  
+  /* Glass effect colors - Light (더 선명한 테두리와 그림자) */
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-bg-hover: rgba(255, 255, 255, 0.9);
+  --glass-border: rgba(148, 163, 184, 0.3);
+  --glass-border-hover: rgba(148, 163, 184, 0.5);
+  --glass-shadow: 0 8px 32px rgba(15, 23, 42, 0.08), 0 0 0 1px rgba(148, 163, 184, 0.1);
+  --glass-shadow-sm: 0 4px 16px rgba(15, 23, 42, 0.06), 0 0 0 1px rgba(148, 163, 184, 0.08);
+  --glass-glow: 0 0 40px rgba(99, 102, 241, 0.15);
+  
+  /* Accent colors */
+  --accent-primary: #6366f1;
+  --accent-secondary: #8b5cf6;
+  --accent-tertiary: #0891b2;
+  --accent-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #0891b2 100%);
+  
+  /* Decorative orbs - Light (더 부드럽게) */
+  --orb-1: rgba(99, 102, 241, 0.15);
+  --orb-2: rgba(139, 92, 246, 0.12);
+  --orb-3: rgba(6, 182, 212, 0.12);
+
+  /* Typography */
+  --font-weight-base: 400;
+  --font-weight-heading: 700;
+  
+  /* Spacing & Radius */
+  --radius-sm: 8px;
+  --radius-base: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  
+  /* Animation */
+  --animate-marquee: marquee 60s linear infinite;
+  --animate-marquee2: marquee2 60s linear infinite;
+  
+  /* Card backgrounds - Light */
+  --card-from: rgba(255, 255, 255, 0.95);
+  --card-overlay: rgba(15, 23, 42, 0.02);
+  
+  /* Notion theme */
+  --notion-dark: false;
 }
 
+/* ===== DARK MODE ===== */
 .dark {
-  --background: oklch(29.23% 0.0626 270.49);
-  --secondary-background: oklch(23.93% 0 0);
-  --foreground: oklch(92.49% 0 0);
-  --main-foreground: oklch(0% 0 0);
-  --main: oklch(67.47% 0.1726 259.49);
-  --border: oklch(0% 0 0);
-  --ring: oklch(100% 0 0);
-  --shadow: 4px 4px 0px 0px var(--border);
+  /* Glassmorphism Color Palette - Cosmic Theme */
+  --background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  --background-solid: #1a1a2e;
+  --foreground: #f0f0f0;
+  --foreground-muted: rgba(240, 240, 240, 0.7);
+  
+  /* Glass effect colors - Dark */
+  --glass-bg: rgba(255, 255, 255, 0.08);
+  --glass-bg-hover: rgba(255, 255, 255, 0.12);
+  --glass-border: rgba(255, 255, 255, 0.15);
+  --glass-border-hover: rgba(255, 255, 255, 0.25);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --glass-shadow-sm: 0 4px 16px rgba(0, 0, 0, 0.2);
+  --glass-glow: 0 0 40px rgba(99, 102, 241, 0.15);
+  
+  /* Decorative orbs - Dark */
+  --orb-1: rgba(99, 102, 241, 0.4);
+  --orb-2: rgba(139, 92, 246, 0.3);
+  --orb-3: rgba(6, 182, 212, 0.3);
+  
+  /* Card backgrounds - Dark */
+  --card-from: rgba(26, 26, 46, 0.95);
+  --card-overlay: rgba(0, 0, 0, 0.2);
+  
+  /* Notion theme */
+  --notion-dark: true;
 }
 
 @theme inline {
-  --color-main: var(--main);
-  --color-background: var(--background);
-  --color-secondary-background: var(--secondary-background);
   --color-foreground: var(--foreground);
-  --color-main-foreground: var(--main-foreground);
-  --color-border: var(--border);
-  --color-overlay: var(--overlay);
-  --color-ring: var(--ring);
-
-  --spacing-boxShadowX: 4px;
-  --spacing-boxShadowY: 4px;
-  --spacing-reverseBoxShadowX: -4px;
-  --spacing-reverseBoxShadowY: -4px;
-  --radius-base: 5px;
-  --shadow-shadow: var(--shadow);
-  --font-weight-base: 500;
-  --font-weight-heading: 700;
+  --color-foreground-muted: var(--foreground-muted);
+  --color-glass-bg: var(--glass-bg);
+  --color-glass-bg-hover: var(--glass-bg-hover);
+  --color-glass-border: var(--glass-border);
+  --color-glass-border-hover: var(--glass-border-hover);
+  --color-accent-primary: var(--accent-primary);
+  --color-accent-secondary: var(--accent-secondary);
+  --color-accent-tertiary: var(--accent-tertiary);
+  --radius-base: var(--radius-base);
+  --font-weight-base: var(--font-weight-base);
+  --font-weight-heading: var(--font-weight-heading);
   --animate-marquee: marquee 60s linear infinite;
   --animate-marquee2: marquee2 60s linear infinite;
 }
@@ -66,10 +118,42 @@
   }
 }
 
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-20px) scale(1.05);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
 @layer base {
   body {
     font-family: var(--font-dm-sans);
-    border-color: #ffffff;
+    background: var(--background);
+    color: var(--foreground);
+    min-height: 100vh;
+    transition: background 0.3s ease, color 0.3s ease;
   }
 
   button,
@@ -81,5 +165,115 @@
   h5,
   h6 {
     font-family: var(--font-dm-sans);
+  }
+}
+
+@layer utilities {
+  /* Glass Card Utilities */
+  .glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    transition: all 0.3s ease;
+  }
+  
+  .glass-sm {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow-sm);
+    transition: all 0.3s ease;
+  }
+  
+  .glass-hover {
+    transition: all 0.3s ease;
+  }
+  
+  .glass-hover:hover {
+    background: var(--glass-bg-hover);
+    border-color: var(--glass-border-hover);
+    transform: translateY(-4px);
+    box-shadow: var(--glass-shadow), var(--glass-glow);
+  }
+  
+  /* Gradient Text */
+  .gradient-text {
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Gradient Border */
+  .gradient-border {
+    position: relative;
+  }
+  
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    border-radius: inherit;
+    background: var(--accent-gradient);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+  
+  /* Floating animation */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  /* Shimmer effect */
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.1) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 3s infinite;
+  }
+  
+  /* Glow effect */
+  .glow {
+    box-shadow: 0 0 20px var(--accent-primary), 0 0 40px rgba(99, 102, 241, 0.3);
+  }
+  
+  /* Orb decorations */
+  .orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    pointer-events: none;
+    animation: pulse-glow 8s ease-in-out infinite;
+    transition: background 0.5s ease;
+  }
+  
+  .orb-1 {
+    background: var(--orb-1);
+    width: 400px;
+    height: 400px;
+  }
+  
+  .orb-2 {
+    background: var(--orb-2);
+    width: 300px;
+    height: 300px;
+    animation-delay: -2s;
+  }
+  
+  .orb-3 {
+    background: var(--orb-3);
+    width: 350px;
+    height: 350px;
+    animation-delay: -4s;
   }
 }

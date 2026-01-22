@@ -3,6 +3,7 @@ import RecentPostsList from "@/components/notion/recent-posts-list";
 import { databaseIntoNotionPosts } from "@/lib/utils";
 import Link from "next/link";
 import { Button } from "../ui/button";
+import { ArrowRight, FileText } from "lucide-react";
 
 const Section2 = async () => {
   const database = await getNotionPages(
@@ -16,23 +17,34 @@ const Section2 = async () => {
   );
 
   return (
-    <div className="w-full pt-24 pb-12 bg-sky-100 flex flex-col justify-center items-center border-collapse px-6">
+    <section className="w-full py-24 px-6 relative">
       <div className="max-w-7xl mx-auto">
-        <div className="flex justify-between items-center">
-          <h1 className="text-3xl max-lg:text-xl font-bold">Recent Archives</h1>
-          <Button asChild>
-            <Link href="/archives" className="flex items-center gap-2" scroll>
-              <p>View all</p>
+        {/* Section Header */}
+        <div className="flex justify-between items-center mb-8">
+          <div className="flex items-center gap-3">
+            <div className="p-2.5 rounded-xl bg-accent-primary/20">
+              <FileText className="w-5 h-5 text-accent-primary" />
+            </div>
+            <h2 className="text-3xl max-lg:text-xl font-bold text-slate-800 dark:text-slate-100">
+              Recent Archives
+            </h2>
+          </div>
+          <Button variant="glass" asChild>
+            <Link href="/archives" className="flex items-center gap-2">
+              <span>View all</span>
+              <ArrowRight className="w-4 h-4" />
             </Link>
           </Button>
         </div>
+        
+        {/* Posts Grid */}
         <RecentPostsList
           link="/archives"
           posts={notionPosts?.slice(0, 3) ?? []}
           type="archive"
         />
       </div>
-    </div>
+    </section>
   );
 };
 
