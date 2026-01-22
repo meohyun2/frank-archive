@@ -143,7 +143,7 @@ const Section1 = () => {
               </div>
               <div className="flex items-center justify-center gap-4 mt-8">
                 <span>현재</span>
-                <a className="hover:scale-105 transition-all duration-300" href="https://www.producthunt.com/products/2-b-ai/launches/2-b-ai?embed=true&amp;utm_source=badge-top-post-badge&amp;utm_medium=badge&amp;utm_campaign=badge-2-b-ai" target="_blank" rel="noopener noreferrer"><img alt="2-b.ai - Todoist meets ChatGPT inside your browser | Product Hunt" width="200" height="54" src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=1057880&amp;theme=dark&amp;period=daily&amp;t=1769067142732" /></a>
+                <a className="hover:scale-105 transition-all duration-300" href="https://www.producthunt.com/products/2-b-ai/launches/2-b-ai?embed=true&amp;utm_source=badge-top-post-badge&amp;utm_medium=badge&amp;utm_campaign=badge-2-b-ai" target="_blank" rel="noopener noreferrer"><Image alt="2-b.ai - Todoist meets ChatGPT inside your browser | Product Hunt" width="200" height="54" src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=1057880&amp;theme=dark&amp;period=daily&amp;t=1769067142732" /></a>
                 <span>이런 서비스를 운영 중이에요.</span>
               </div>
               <div className="flex items-center justify-center gap-4">
