@@ -3,6 +3,7 @@ import RecentPostsList from "@/components/notion/recent-posts-list";
 import { databaseIntoNotionPosts } from "@/lib/utils";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { ArrowRight, Layers } from "lucide-react";
 
 const Section3 = async () => {
   const database = await getNotionPages(
@@ -17,23 +18,34 @@ const Section3 = async () => {
   );
 
   return (
-    <div className="w-full pb-24 pt-12 bg-sky-100 flex flex-col justify-center items-center border-collapse px-6">
+    <section className="w-full py-24 px-6 relative">
       <div className="max-w-7xl mx-auto">
-        <div className="flex justify-between items-center">
-          <h1 className="text-3xl max-lg:text-xl font-bold">Recent Projects</h1>
-          <Button asChild>
-            <Link href="/projects" className="flex items-center gap-2" scroll>
-              <p>View all</p>
+        {/* Section Header */}
+        <div className="flex justify-between items-center mb-8">
+          <div className="flex items-center gap-3">
+            <div className="p-2.5 rounded-xl bg-accent-secondary/20">
+              <Layers className="w-5 h-5 text-accent-secondary" />
+            </div>
+            <h2 className="text-3xl max-lg:text-xl font-bold text-slate-800 dark:text-slate-100">
+              Recent Projects
+            </h2>
+          </div>
+          <Button variant="glass" asChild>
+            <Link href="/projects" className="flex items-center gap-2">
+              <span>View all</span>
+              <ArrowRight className="w-4 h-4" />
             </Link>
           </Button>
         </div>
+        
+        {/* Projects Grid */}
         <RecentPostsList
           link="/projects"
           posts={notionPosts?.slice(0, 3) ?? []}
           type="project"
         />
       </div>
-    </div>
+    </section>
   );
 };
 

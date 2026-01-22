@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+  <!-- LangGraph 스타일 - 연결된 노드 그래프 -->
+  <circle cx="6" cy="6" r="2.5" fill="#1C3C3C"/>
+  <circle cx="18" cy="6" r="2.5" fill="#1C3C3C"/>
+  <circle cx="6" cy="18" r="2.5" fill="#1C3C3C"/>
+  <circle cx="18" cy="18" r="2.5" fill="#1C3C3C"/>
+  <circle cx="12" cy="12" r="3" fill="#10A37F"/>
+  <line x1="8" y1="7" x2="10" y2="10" stroke="#1C3C3C" stroke-width="1.5"/>
+  <line x1="16" y1="7" x2="14" y2="10" stroke="#1C3C3C" stroke-width="1.5"/>
+  <line x1="8" y1="17" x2="10" y2="14" stroke="#1C3C3C" stroke-width="1.5"/>
+  <line x1="16" y1="17" x2="14" y2="14" stroke="#1C3C3C" stroke-width="1.5"/>
+  <line x1="6" y1="8.5" x2="6" y2="15.5" stroke="#1C3C3C" stroke-width="1.5"/>
+  <line x1="18" y1="8.5" x2="18" y2="15.5" stroke="#1C3C3C" stroke-width="1.5"/>
+</svg>

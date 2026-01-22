@@ -1,10 +1,13 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { useTheme } from "next-themes";
 
 export default function Giscus() {
   const ref = useRef<HTMLDivElement>(null);
+  const { resolvedTheme } = useTheme();
 
+  // Initial load
   useEffect(() => {
     if (!ref.current || ref.current.hasChildNodes()) return;
 
@@ -22,26 +25,37 @@ export default function Giscus() {
     scriptElem.setAttribute("data-reactions-enabled", "1");
     scriptElem.setAttribute("data-emit-metadata", "0");
     scriptElem.setAttribute("data-input-position", "bottom");
-    scriptElem.setAttribute("data-theme", "light");
+    scriptElem.setAttribute("data-theme", resolvedTheme === "dark" ? "transparent_dark" : "light");
     scriptElem.setAttribute("data-lang", "ko");
 
     ref.current.appendChild(scriptElem);
-  }, []);
+  }, [resolvedTheme]);
 
-  // https://github.com/giscus/giscus/blob/main/ADVANCED-USAGE.md#isetconfigmessage
+  // Theme change handler
   useEffect(() => {
     const iframe = document.querySelector<HTMLIFrameElement>(
       "iframe.giscus-frame"
     );
-    iframe?.contentWindow?.postMessage(
-      { giscus: { setConfig: { theme: "light" } } },
-      "https://giscus.app"
-    );
-  }, []);
+    if (iframe) {
+      iframe.contentWindow?.postMessage(
+        { 
+          giscus: { 
+            setConfig: { 
+              theme: resolvedTheme === "dark" ? "transparent_dark" : "light" 
+            } 
+          } 
+        },
+        "https://giscus.app"
+      );
+    }
+  }, [resolvedTheme]);
 
   return (
-    <div className="w-full h-full p-[20px] max-w-[1200px] m-auto">
-      <section ref={ref} />
+    <div className="w-full max-w-6xl mx-auto px-6 py-8">
+      <div className="glass rounded-2xl p-6">
+        <h3 className="text-xl font-semibold mb-4 gradient-text">Comments</h3>
+        <section ref={ref} />
+      </div>
     </div>
   );
 }

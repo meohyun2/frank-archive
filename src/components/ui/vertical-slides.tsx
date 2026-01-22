@@ -28,16 +28,16 @@ export default function VerticalSlides({ items, className }: Props) {
 
   return (
     <div
-      className={`relative flex flex-col overflow-y-hidden border-border ${className}`}
+      className={`relative flex flex-col overflow-y-hidden ${className}`}
     >
       <div
-        className={`flex flex-col flex-1 whitespace-nowrap transition-all duration-2000 ease-in-out ${
+        className={`flex flex-col flex-1 whitespace-nowrap transition-all duration-700 ease-out ${
           isEnd && "transition-none"
         }`}
         style={{ transform: `translateY(-${currentIndex * stepPercentage}%)` }}
       >
         {visibleItems.map((item, index) => {
-          return <span key={`marquee-visible-${index}`}>{item}</span>;
+          return <span className="flex items-center justify-center" key={`marquee-visible-${index}`}>{item}</span>;
         })}
       </div>
     </div>

@@ -10,8 +10,12 @@ export default async function ProjectsPage({ params }: Props) {
   const { id } = await params;
   const recordMap = await getNotionPages(id);
   return (
-    <div>
-      <ClientNotionRenderer recordMap={recordMap} />
+    <div className="min-h-screen py-8">
+      <div className="max-w-6xl mx-auto px-6">
+        <article className="glass rounded-2xl overflow-hidden">
+          <ClientNotionRenderer recordMap={recordMap} />
+        </article>
+      </div>
       <Giscus />
     </div>
   );
